@@ -1,0 +1,73 @@
+:root{--cream:#fbf1df;--brown:#3a2418;--logo:clamp(110px,17.7vw,192px)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--brown);font-family:Poppins,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%}
+
+.page{position:relative;z-index:2;max-width:1084px;margin:0 auto;padding-top:22px}
+
+/* video */
+.video{margin:0 3.5%;aspect-ratio:1008/482;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 6px 18px rgba(80,50,20,.25)}
+.thumb{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:pointer}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb:focus-visible{outline:3px solid #e7b04a;outline-offset:-3px}
+.video iframe{display:block;width:100%;height:100%;border:0}
+
+/* team card */
+.card{position:relative;margin:24px 3.5% 0;padding:14px 10px 26px;background:linear-gradient(#fdf6e7,#fcf1dd);border:2px solid #ecd6ab;border-radius:28px;box-shadow:0 6px 18px rgba(120,80,30,.14)}
+.card-grid{display:grid;grid-template-columns:var(--logo) minmax(0,1fr) var(--logo);grid-template-areas:"l head r" "l table r";column-gap:clamp(8px,1.5vw,16px);align-items:start}
+.logo{width:100%;aspect-ratio:1;object-fit:contain;border-radius:50%;background:#fff}
+.logo-l{grid-area:l}.logo-r{grid-area:r}
+
+.head{grid-area:head;text-align:center}
+.title{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.title h1{margin:0;font:800 clamp(28px,4.9vw,54px)/1.15 "Baloo 2",sans-serif;color:var(--brown);white-space:nowrap}
+.paw{color:#a2653a;width:clamp(30px,5.2vw,56px);height:auto;flex:none}
+.paw-l{transform:rotate(-12deg)}.paw-r{transform:rotate(12deg)}
+.sec{display:flex;align-items:center;gap:clamp(10px,2vw,20px);margin-top:2px}
+.sec i{flex:1;height:2px;background:#c9a771}
+.sec span{font:italic 600 clamp(19px,3vw,34px) "Playfair Display",serif}
+
+/* table */
+.table-wrap{grid-area:table;margin-top:clamp(6px,1vw,10px);padding:2px 5px;background:rgba(255,251,242,.75);border:1px solid #efdcb8;border-radius:20px;box-shadow:0 4px 12px rgba(120,80,30,.1)}
+table{width:100%;border-collapse:separate;border-spacing:4px;font-size:clamp(14px,2.3vw,25px);table-layout:fixed}
+th:first-child{width:12.7%}th:last-child{width:16.5%}
+th,td{height:clamp(40px,4.8vw,52px);padding:0 6px;text-align:center;border-radius:14px;box-shadow:0 2px 4px rgba(120,80,30,.13);overflow:hidden;text-overflow:ellipsis}
+th{height:clamp(44px,5.4vw,58px);background:#ebd2ae;font-weight:600;font-size:1.04em}
+td.n{background:#f5e5c3}
+tr.yellow td:not(.n){background:#f8ecc9}
+tr.blue td:not(.n){background:#d7e8ec}
+tr.green td:not(.n){background:#d5e6d0}
+tr.beige td:not(.n){background:#f4e4c4}
+
+/* decorative animals */
+.deco-row{display:contents}
+.deco{position:absolute;bottom:-4px;height:auto;
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 9%),linear-gradient(var(--h),transparent,#000 9%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to bottom,transparent,#000 9%),linear-gradient(var(--h),transparent,#000 9%);
+  mask-composite:intersect}
+.deco-l{--h:to left;left:-3.63%;width:25.4%}
+.deco-r{--h:to right;right:-3.63%;width:23.7%}
+
+/* footer */
+.footer{position:relative;z-index:1;margin-top:-34px}
+.wave{display:block;width:100%;height:60px}
+.foot{background:#47291a;color:#fdf3e0;padding:20px 14px 30px}
+.foot-in{max-width:1084px;margin:0 auto;display:flex;align-items:center;gap:clamp(6px,1.2vw,12px)}
+.foot-in .line{flex:1;height:2px;background:#d9b878;opacity:.8;min-width:0}
+.foot-in .dash{width:clamp(12px,3.7vw,40px);height:2px;background:#d9b878;opacity:.8}
+.foot-in .paw{color:#e9b44c;width:clamp(26px,4.2vw,46px);flex:none}
+.foot p{margin:0;font:italic 500 clamp(17px,3.5vw,38px)/1.2 "Playfair Display",serif;text-align:center}
+
+/* mobile */
+@media (max-width:700px){
+  .card-grid{grid-template-columns:1fr 1fr;grid-template-areas:"l r" "head head" "table table";row-gap:12px}
+  .logo{width:clamp(96px,33vw,150px)}
+  .logo-r{justify-self:end}
+  .title h1{font-size:clamp(26px,8.5vw,40px)}
+  .deco-row{display:flex;justify-content:space-between;align-items:flex-end;margin:14px -10px -26px}
+  .deco{position:static;width:42%}
+  .foot-in .line{display:none}
+  .foot-in{justify-content:center}
+}
