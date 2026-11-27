@@ -73,5 +73,7 @@ tr.beige td:not(.n){background:#f4e4c4}
   th{font-size:1em}
   .foot-in .line{display:none}
   .foot-in{justify-content:center}
-  .deco-row { display: none; }
 }
+
+/* hide decorative animals on phones and small tablets */
+@media (max-width:900px){.deco-row{display:none !important}}
