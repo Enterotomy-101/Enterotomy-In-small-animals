@@ -66,12 +66,7 @@ tr.beige td:not(.n){background:#f4e4c4}
   .logo{width:clamp(96px,33vw,150px)}
   .logo-r{justify-self:end}
   .title h1{font-size:clamp(26px,8.5vw,40px)}
-  .deco-row{display:flex;justify-content:space-between;align-items:flex-end;margin:14px -10px -26px}
-  .deco{position:static;width:48%;
-    -webkit-mask-image:linear-gradient(to bottom,transparent,#000 9%),var(--x);
-    mask-image:linear-gradient(to bottom,transparent,#000 9%),var(--x)}
-  .deco-l{--x:linear-gradient(to right,transparent 15%,#000 25%,#000 90%,transparent)}
-  .deco-r{--x:linear-gradient(to right,transparent,#000 10%,#000 72%,transparent 82%)}
+  .deco-row{display:none}
   table{border-spacing:3px;font-size:clamp(12.5px,3.6vw,18px)}
   th:first-child{width:13%}th:last-child{width:20%}
   th,td{padding:0 2px;text-overflow:clip}
